@@ -24,7 +24,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li>
               <form id="search-form" action="#" method="GET">
                 <input type="text" name="search" placeholder="Search...">
@@ -37,21 +37,19 @@
   </nav>
 
     <!-- About Us page content -->
-    <header>
+    <header class="home-entrance">
       <h1>About Us</h1>
       <!-- Navigation menu, search bar, etc. -->
     </header>
     <main>
       <section id="about-content">
         <div id="video-container">
-          <video controls autoplay muted loop>
+          <video autoplay muted loop>
             <source src="./img/PhoneAnimation.mov" type="video/mp4">
           </video>
-          <div id="video-overlay">
-            <i id="video-play-icon" class="fas fa-play-circle"></i>
-          </div>
+         
         </div>
-        <div class="text">
+        <div class="textOfAbout">
           <h2>Welcome to Phone Shop!</h2>
           <p>We are a dedicated team passionate about technology and smartphones. At Phone Shop, we strive to provide the best selection of high-quality smartphones at competitive prices.</p>
           <p>Our mission is to help you find the perfect phone that suits your needs and preferences. Whether you are looking for the latest flagship device or a budget-friendly option, we have a wide range of options to choose from.</p>
@@ -64,12 +62,50 @@
           <!-- Add your animated content here -->
         </div>
       </section>
-      <section id="audio-container">
-        <audio controls>
-          <source src="phone-audio.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      </section>
+    
+  <div id="contentOfTeam">
+    <div id="profile-section">
+      <h2>Our Team</h2>
+      <br>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="./img/profile1.jpg" alt="Profile 1">
+        </div>
+        <div class="profile-info">
+          <h3>John Doe</h3>
+          <p>Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="./img/profile2.jpeg" alt="Profile 2">
+        </div>
+        <div class="profile-info">
+          <h3>Jane Smith</h3>
+          <p>Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="./img/profile3.jpeg" alt="Profile 3">
+        </div>
+        <div class="profile-info">
+          <h3>Elma Leve</h3>
+          <p>Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="./img/profile4.jpg" alt="Profile 4">
+        </div>
+        <div class="profile-info">
+          <h3>Anne Maria</h3>
+          <p>Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    
+    </div>
     </main>
 
     <!-- Footer -->
