@@ -17,6 +17,14 @@
     object-fit: cover;
   }
   
+  .slider.slide-transition {
+    animation: slideTransition 0.3s ease;
+  }
+  
+  @keyframes slideTransition {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
   
   .contact-container {
     max-width: 600px;
@@ -52,13 +60,3 @@
   .contact-container button:hover {
     background-color: #555;
   }
-  
-  .slider.slide-transition {
-    animation: slideTransition 0.3s ease;
-  }
-  
-  @keyframes slideTransition {
-    from { transform: translateX(0%); }
-    to { transform: translateX(-100%); }
-  }
-  

@@ -50,14 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
      
 
 
+
   const slider = document.querySelector('.slider');
 const images = [
-  'img/image1.jpg',
-  'img/image2.jpg',
-  'img/image3.jpg',
-  'img/image1.jpg',
-  'img/image2.jpg',
-  'img/image3.jpg'
+  './img/image1.jpg',
+  './img/image1.jpg',
+  './img/image1.jpg',
+  './img/image2.jpg',
+  './img/image2.jpg',
+  './img/image2.jpg',
+  './img/image3.jpg',
+  './img/image3.jpg',
+  './img/image3.jpg'
 ];
 let slideIndex = 0;
 let isTransitioning = false;
@@ -82,6 +86,7 @@ function showSlide() {
     isTransitioning = false;
   }, 300);
 }
+
 function showNextSlide() {
   if (isTransitioning) return;
 
@@ -93,8 +98,41 @@ function showNextSlide() {
   showSlide();
 }
 
-
 slider.addEventListener('click', showNextSlide);
 
 // Show the initial set of images
 showSlide();
+
+
+
+  // function sendMessage(event) {
+  //   event.preventDefault();
+
+  //   const nameInput = document.querySelector('input[type="text"]').value;
+  //   const emailInput = document.querySelector('input[type="email"]').value;
+  //   const messageInput = document.querySelector('textarea').value;
+
+  //   console.log('Form submitted!');
+  //   console.log('Name:', nameInput);
+  //   console.log('Email:', emailInput);
+  //   console.log('Message:', messageInput);
+
+  //   // Additional logic to send the form data to a server or perform any other actions
+  // }
+
+// Add an event listener to the form submit event
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Retrieve form input values
+  const nameInput = document.querySelector('input[type="text"]').value;
+  const emailInput = document.querySelector('input[type="email"]').value;
+  const messageInput = document.querySelector('textarea').value;
+
+  console.log('Form submitted!');
+  console.log('Name:', nameInput);
+  console.log('Email:', emailInput);
+  console.log('Message:', messageInput);
+
+  // Additional logic to send the form data to a server or perform any other actions
+});
