@@ -1,11 +1,14 @@
 @import 'css/products.css';
 @import 'css/about.css';
 @import 'css/contact.css';
+@import url('https://fonts.googleapis.com/css?family=Ysabeau SC');
+
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: Ysabeau SC, sans-serif ;
 }
 
 #preloader {
@@ -27,11 +30,7 @@ body, html {
   100% { transform: rotate(360deg); }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+
 
 header {
   background-color: #393E46;

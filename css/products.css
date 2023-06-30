@@ -22,10 +22,12 @@
   .product h2 {
     font-size: 18px;
     margin-bottom: 10px;
+    font-family: Arial ,sans-serif;
   }
   
   .product p {
     margin-bottom: 10px;
+    font-family: Arial ,sans-serif;
   }
   
   .product button {
@@ -34,6 +36,7 @@
     border: none;
     padding: 8px 16px;
     cursor: pointer;
+    font-family: Arial ,sans-serif;
   }
   
   /* ... Your existing styles ... */
