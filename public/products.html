@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Shop - Products</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ysabeau+SC">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <!-- Your preloader content here -->
+  </div>
+
+  <!-- Main content -->
+  <div id="content">
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar-logo">
+            <a href="#"><img src="./img/logo.png" alt="Phone Shop Logo"></a>
+          </div>
+          <div class="navbar-links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="slider.html">Watch Our Products</a></li>
+              <li>
+                <form id="search-form" action="#" method="GET">
+                  <input type="text" name="search" placeholder="Search...">
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+              </li>
+              <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            </ul>
+          </div>
+    </nav>
+
+    <header class="home-entrance">
+      <h1>Phone Shop - Products</h1>
+      <!-- Navigation menu, search bar, etc. -->
+    </header>
+    <main>
+      <section id="product-listings">
+        <div class="product">
+          <img src="./img/product1.jpg" alt="Phone 1">
+          <h2>Iphone 12-White</h2>
+          <p>Price: $899</p>
+          <button onclick="addToCart('Iphone 12-White', 899)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="./img/product2.jpeg" alt="Phone 2">
+          <h2>Iphone 13-Pink</h2>
+          <p>Price: $999</p>
+          <button onclick="addToCart('Iphone 13-Pink', 999)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="./img/product3.jpeg" alt="Phone 3">
+            <h2>Iphone 13-Red</h2>
+            <p>Price: $999</p>
+            <button onclick="addToCart('Iphone 13-Red', 999)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./img/product4.jpeg" alt="Phone 4">
+            <h2>Iphone 13-Black</h2>
+            <p>Price: $999</p>
+            <button onclick="addToCart('Iphone 13-Black', 999)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./img/product5.jpeg" alt="Phone 5">
+            <h2>Samsung S23</h2>
+            <p>Price: $799</p>
+            <button onclick="addToCart('Samsung S23', 799)">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./img/product6.jpeg" alt="Phone 6">
+            <h2>Samsung A21</h2>
+            <p>Price: $599</p>
+            <button onclick="addToCart('Samsung A21', 599)">Add to Cart</button>
+          </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 Phone Shop. All rights reserved.</p>
+    </footer>
+  </div>
+
+  
+  <script>
+    // Function to add a product to the cart
+    function addToCart(name, price) {
+      // Retrieve the cart data from localStorage or initialize it if empty
+      let cartItems = localStorage.getItem('cartItems');
+      cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+      // Check if the product is already in the cart
+      const existingItem = cartItems.find(item => item.name === name);
+
+      if (existingItem) {
+        // If the product already exists, update the quantity
+        existingItem.quantity++;
+      } else {
+        // If it's a new product, add it to the cart
+        cartItems.push({ name, price, quantity: 1 });
+      }
+
+      // Update the cart data in localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      // Display a success message or perform any other necessary actions
+      alert('Product added to cart!');
+    }
+  </script>
+
+  <!-- JavaScript code -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Shop - Shopping Cart</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ysabeau+SC">
+  <style>
+    #cart {
+      margin: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #total {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .cart-buttons {
+      margin-top: 20px;
+      text-align: right;
+    }
+    
+    .cart-buttons button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .cart-buttons button:hover {
+      background-color: #45a049;
+    }
+    
+    .cart-buttons button:first-child {
+      background-color: #f44336;
+    }
+    
+    .cart-buttons button:first-child:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+    <!-- Preloader -->
+  <div id="preloader">
+    <!-- Your preloader content here -->
+  </div>
+  <!-- Main content -->
+  <div id="content">
+    <!-- Navbar -->
+    <nav>
+      <div class="navbar-logo">
+        <a href="#"><img src="./img/logo.png" alt="Phone Shop Logo"></a>
+      </div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="canvas.html">Watch Our Products</a></li>
+          <li>
+            <form id="search-form" action="#" method="GET">
+              <input type="text" name="search" placeholder="Search...">
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </li>
+          <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li> <!-- Added link to cart.html -->
+        </ul>
+      </div>
+    </nav>
+
+   <!-- Cart  page content -->
+   <header class="home-entrance">
+    <h1>Shopping Cart</h1>
+  </header>
+<main>
+    <div id="cart">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+        </tbody>
+      </table>
+      <div id="total">
+        <strong>Total:</strong> $<span id="cart-total">0.00</span>
+      </div>
+      
+      <div class="cart-buttons">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="checkout()">Checkout</button>
+      </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2023 Phone Shop. All rights reserved.</p>
+  </footer>
+</div>
+    <script>
+      function updateCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+
+        // Retrieve the cart items from localStorage or initialize an empty array
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Clear the previous cart items
+        cartItemsContainer.innerHTML = '';
+
+        let total = 0;
+
+        // Loop through the cart items and populate the table
+        cartItems.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.name}</td>
+            <td class="item-price">${item.price.toFixed(2)}</td>
+            <td class="item-quantity">${item.quantity}</td>
+            <td>${(item.price * item.quantity).toFixed(2)}</td>
+          `;
+          cartItemsContainer.appendChild(row);
+
+          // Calculate the total price
+          total += item.price * item.quantity;
+        });
+
+        // Update the total price
+        cartTotal.innerText = total.toFixed(2);
+      }
+
+      // Function to clear the cart
+      function clearCart() {
+        localStorage.removeItem('cartItems');
+        updateCart();
+      }
+
+      // Function to handle checkout
+      function checkout() {
+        window.location.href = 'slider.html';
+      }
+      
+
+      // Call the updateCart function when the page loads
+      window.addEventListener('load', updateCart);
+    </script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
