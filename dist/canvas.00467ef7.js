@@ -35219,18 +35219,18 @@ var PIXI = _interopRequireWildcard(require("pixi.js"));
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var app = new PIXI.Application({
-  background: '#1099bb',
+  background: '#686C72',
   resizeTo: window
 });
 document.body.appendChild(app.view);
 var style = new PIXI.TextStyle({
   fontFamily: 'Arial',
-  fontSize: 36,
+  fontSize: 100,
   fontStyle: 'italic',
   fontWeight: 'bold',
-  fill: ['#ffffff', '#00ff99'],
+  fill: ['#00ADB5', '#000000'],
   // gradient
-  stroke: '#4a1850',
+  stroke: '#393E46',
   strokeThickness: 5,
   dropShadow: true,
   dropShadowColor: '#000000',
@@ -35238,13 +35238,17 @@ var style = new PIXI.TextStyle({
   dropShadowAngle: Math.PI / 6,
   dropShadowDistance: 6,
   wordWrap: true,
-  wordWrapWidth: 440,
+  align: 'center',
+  wordWrapWidth: 1110,
   lineJoin: 'round'
 });
 var richText = new PIXI.Text('Best Shop In Town', style);
-richText.x = 50;
-richText.y = 220;
+richText.anchor.set(0.5);
+richText.position.set(app.screen.width / 2, app.screen.height / 4); // Center the text
+
 app.stage.addChild(richText);
+
+//Teksti tjeter
 var skewStyle = new PIXI.TextStyle({
   fontFamily: 'Arial',
   dropShadow: true,
@@ -35253,8 +35257,8 @@ var skewStyle = new PIXI.TextStyle({
   dropShadowBlur: 4,
   dropShadowColor: '0x111111',
   dropShadowDistance: 10,
-  fill: ['#ffffff'],
-  stroke: '#004620',
+  fill: ['#000000'],
+  stroke: '#00ADB5',
   fontSize: 60,
   fontWeight: 'lighter',
   lineJoin: 'round',
@@ -35265,6 +35269,8 @@ skewText.skew.set(0.65, -0.3);
 skewText.anchor.set(0.5, 0.5);
 skewText.x = 300;
 skewText.y = 480;
+skewText.position.set(app.screen.width / 2, app.screen.height / 1.5); // Center the text
+
 app.stage.addChild(skewText);
 },{"pixi.js":"../node_modules/pixi.js/lib/index.mjs"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
