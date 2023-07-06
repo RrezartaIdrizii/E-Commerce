@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ysabeau+SC">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Preloader -->
@@ -43,6 +44,26 @@
       <!-- Navigation menu, search bar, etc. -->
     </header>
     <main>
+      <!-- Image Carousel -->
+      <div class="image-carousel">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./img/image1.jpg" alt="Photo 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/image2.jpg" alt="Photo 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/image3.jpg" alt="Photo 3">
+                </div>
+            </div>
+            <!-- Add navigation buttons -->
+            <div class="swiper-button-prev swiper-button-prev-custom"></div>
+            <div class="swiper-button-next swiper-button-next-custom"></div>
+        </div>
+    </div>
+    <br>
       <section id="product-listings">
         <div class="product">
           <img src="./img/product1.jpg" alt="Phone 1">
@@ -114,8 +135,21 @@
       // Display a success message or perform any other necessary actions
       alert('Product added to cart!');
     }
-  </script>
 
+
+    //---------------------
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        navigation: {
+          prevEl: '.swiper-button-prev-custom',
+          nextEl: '.swiper-button-next-custom'
+        },
+    });
+});
+  </script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- JavaScript code -->
   <script src="script.js"></script>
 </body>
